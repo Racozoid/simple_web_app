@@ -9,11 +9,12 @@ interface Employee {
     }
 
 function App () {
-
+    // Стейты для хранения и добавления работников и закрытия модального окна 
     const [employees, setEmployees] = useState<Employee[]>([]);
     const [open, setOpen] = useState(false);
     const [newEmployee, setNewEmployee] = useState<Employee>({ name: '', position: '', salary: '' });
 
+    // Обработчики для открытия/закрытия модального окна, добавления и удаления работкников
     const handleOpen = () => {
         setOpen(true);
     };
@@ -32,7 +33,7 @@ function App () {
         setEmployees(employees.filter((_, i) => i !== index));
     };
 
-
+    
     return (
         <div>
             <Table>
